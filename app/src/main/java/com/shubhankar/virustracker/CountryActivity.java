@@ -63,7 +63,7 @@ public class CountryActivity extends AppCompatActivity {
         pieChart.addPieSlice(new PieModel("Deaths",Integer.parseInt(tvTotalDeaths.getText().toString()), Color.parseColor("#EF5350")));
         pieChart.addPieSlice(new PieModel("Active",Integer.parseInt(tvActive.getText().toString()), Color.parseColor("#29B6F6")));
         pieChart.startAnimation();
-        
+
         simpleArcLoader.stop();
         simpleArcLoader.setVisibility(View.GONE);
         scrollView.setVisibility(View.VISIBLE);

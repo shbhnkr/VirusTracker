@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+    android:orientation="horizontal"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:id="@+id/country_row"
@@ -8,8 +8,17 @@
     android:clickable="true"
     android:focusable="true"
     android:foreground="?android:attr/selectableItemBackground">
+    <ImageView
+        android:layout_width="80dp"
+        android:layout_height="55dp"
+        android:id="@+id/imageFlag"
+        android:padding="5dp"/>
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:fontFamily="@font/gilroy_light"
+        android:textSize="18dp"
+        android:paddingLeft="10dp"
         android:id="@+id/country_row_text_view" />
 </LinearLayout>

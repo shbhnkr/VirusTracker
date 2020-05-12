@@ -4,9 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ScrollView;
 import android.widget.TextView;
@@ -32,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
     SimpleArcLoader simpleArcLoader;
     ScrollView scrollView;
     PieChart pieChart;
-
+    private Button infoButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,6 +51,14 @@ public class MainActivity extends AppCompatActivity {
         pieChart = findViewById(R.id.piechart);
         scrollView = findViewById(R.id.scrollStats);
         requestQueue = Volley.newRequestQueue(getApplicationContext());
+        infoButton = findViewById(R.id.infoButton);
+        infoButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent implicitIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.who.int/emergencies/diseases/novel-coronavirus-2019"));
+                startActivity(implicitIntent);
+            }
+        });
         load();
     }
     private void load()
@@ -119,6 +129,8 @@ public class MainActivity extends AppCompatActivity {
                 });
         requestQueue.add(request);
     }
-
+    public void trackCountries(View view) {
+        startActivity(new Intent(getApplicationContext(), AffectedCountries.class));
+    }
 }
 

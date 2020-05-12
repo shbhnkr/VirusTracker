@@ -23,7 +23,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
-            android:fontFamily="@font/gilroy_light"
+            android:fontFamily="@font/gilroy_extrabold"
             android:text="COVID-19"
             android:textAllCaps="true"
             android:textStyle="bold"
